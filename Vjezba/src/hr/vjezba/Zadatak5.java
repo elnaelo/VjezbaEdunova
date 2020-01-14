@@ -1,66 +1,50 @@
 package hr.vjezba;
 
-import javax.swing.JOptionPane;
+
 
 public class Zadatak5 {
-
+	
 	public static void main(String[] args) {
-	     System.out.println("Enter The Value For N :");
-        
-	         
-	        int n = Integer.parseInt(JOptionPane.showInputDialog("unesi n"));
-	        
-	        int m = Integer.parseInt(JOptionPane.showInputDialog("unesi m"));	        
-	        int matrica [][] = new int[n][m];
-	         
-	        int value = 1;
-	         
-	        int minCol = 0;
-	         
-	        int maxCol = m-1;
-	         
 	        int minRow = 0;
-	         
-	        int maxRow = n-1;
-	         
-	        while (value <= n*m)
+		
+		
+
+		int a = 5;
+		int b = 4;
+		int mini=0;
+		int minj=0;
+		int maxi=a-1;
+		int maxj=b-1;
+		int broj=1;
+		
+		int[][] matrica = new int [a][b];
+		 {
+		for(int i=maxj;i>=0;i--) {
+			matrica[maxi][i]=broj++;
+		}
+		
+		for(int i=maxj;i>=0;i--) {
+			matrica[i][minj]=broj++;
+		}
+		
+		for(int i=minj+1;i<=maxj;i++) {
+			matrica[mini][i]=broj++;
+		}
+		
+		for(int i=mini+1;i<maxi;i++) {
+			matrica[i][maxj]=broj++;
+		
+		}
+		for (int i = 0; i < a; i++)
+	    {
+	        for (int j = 0; j < b; j++)
 	        {
-	            for (int i = minCol; i <= maxCol; i++)
-	            {
-	                matrica[minRow][i] = value;
-	                     
-	                value++;
-	            }
-	             
-	            for (int i = minRow+1; i <= maxRow; i++) 
-	            { 
-	                matrica[i][maxCol] = value; 
-	                 
-	                value++; 
-	            } 
-	             
-	            for (int i = maxCol-1; i >= minCol; i--)
-	            {
-	                matrica[maxRow][i] = value;
-	                             
-	                value++;
-	            }
-	             
-	            for (int i = maxRow-1; i >= minRow+1; i--) 
-	            {
-	                matrica[i][minCol] = value;
-	                 
-	                value++;
-	            }
-	             
-	            minCol++;
-	             
-	            minRow++;
-	             
-	            maxCol--;
-	             
-	            maxRow--;
+	            System.out.print(matrica[i][j]+ "\t");
 	        }
+	         
+	        System.out.println();
+	    }
+	}
+	}
 	}
 
-}
